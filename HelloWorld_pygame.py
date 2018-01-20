@@ -1,5 +1,9 @@
 # -*- coding: UTF-8 -*-
 
+# 流程 :
+# 1.处理事件
+# 2.更新游戏状态
+# 3.绘制游戏状态到屏幕上
 # 声明 导入pygame和sys模块，这样我们的程序才可以使用里面的方法
 import pygame, sys
 
@@ -7,11 +11,13 @@ import pygame, sys
 from pygame.locals import *
 pygame.init()  # 初始化pygame
 
-DISPLAYSURF = pygame.display.set_mode((400, 300))  # 设置窗口的大小单位为像素
+# 设置窗口的大小单位为像素
+DISPLAYSURF = pygame.display.set_mode((400, 300))
 
-pygame.display.set_caption('Hello World!')  # 设置窗口的标题
-
-while True:  # 程序主循环
+# 设置窗口的标题
+pygame.display.set_caption('Hello World!')
+# 程序主循环
+while True:
 
     for event in pygame.event.get():  # 获取事件
 
