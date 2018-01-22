@@ -12,7 +12,16 @@ class Ship():
         # 将每艘新ship ， 放在屏幕底部中央
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
+        self.move_right = False
+        self.move_left = False
 
     def biltme(self):
         # 在指定位置绘制ship
         self.screen.blit(self.image , self.rect)
+
+    # 移动飞船
+    def update(self):
+        if self.move_right:
+            self.rect.centerx += 1
+        if self.move_left:
+            self.rect.centerx -= 1

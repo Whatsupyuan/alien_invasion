@@ -12,7 +12,8 @@ def run_game():
     # 创建飞船
     ship = Ship(screen)
     while True:
-        gf.check_events(ship)
+        gf.check_events_keepMove(ship)
+        ship.update()
         gf.update_screen(setting , screen , ship)
 
 run_game()
