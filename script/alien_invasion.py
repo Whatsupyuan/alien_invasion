@@ -12,7 +12,7 @@ def run_game():
             # 点击关闭按钮 pygame.QUIT
             if even.type == pygame.QUIT:
                 print("Quit Process")
-                # 游戏退出
+                # 退出Game
                 sys.exit()
         pygame.display.flip()
 

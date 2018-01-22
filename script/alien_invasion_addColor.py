@@ -11,7 +11,7 @@ def run_game():
     max_num = 255 ;
     while True:
         # 设置背景颜色
-        #screen.fill(bg_color)
+        screen.fill(bg_color)
         # 只要有交互时间时,就会执行以下的for循环。例如鼠标位置的变化
         for even in pygame.event.get():
             # 点击关闭按钮 pygame.QUIT
@@ -19,15 +19,7 @@ def run_game():
                 print("Quit Process")
                 # 游戏退出
                 sys.exit()
-            if init_num <= max_num:
-                color_list = (init_num , 255 , 255)
-                screen.fill(color_list)
-                print(color_list)
-                init_num += 1
-            else:
-                init_num = 0
-        print("while True循环")
-        pygame.display.flip()
+            pygame.display.flip()
 run_game()
 
 # 鼠标移动之后修改背景颜色
