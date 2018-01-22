@@ -23,12 +23,13 @@ def check_events_keepMove(ship):
     for even in pygame.event.get():
         if even.type == pygame.QUIT:
             sys.exit()
-        # 左右移动飞船
+        # 左右移动 , 按下按键
         elif even.type == pygame.KEYDOWN:
             if even.key == pygame.K_RIGHT:
                 ship.move_right = True
             elif even.key == pygame.K_LEFT:
                 ship.move_left = True
+        # 左右移动时 , 抬起按键
         elif even.type == pygame.KEYUP:
             if even.key == pygame.K_RIGHT:
                 ship.move_right = False
