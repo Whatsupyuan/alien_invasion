@@ -1,14 +1,16 @@
 import sys
 import pygame
+from conf.setting import Setting
+
+# 创建Setting对象
+setting = Setting()
 
 def run_game():
     pygame.init()
-    screen = pygame.display.set_mode((500,400))
+    screen = pygame.display.set_mode((setting.width,setting.height))
     pygame.display.set_caption("Alien Invasion")
     # 在每次执行while 循环时都绘制一个空屏幕，并擦去旧屏幕
-    #bg_color = (189,252,201) ;
-    init_num = 0 ;
-    max_num = 255 ;
+    bg_color = setting.backgroudColor ;
     while True:
         # 设置背景颜色
         screen.fill(bg_color)
@@ -19,15 +21,6 @@ def run_game():
                 print("Quit Process")
                 # 游戏退出
                 sys.exit()
-            if init_num <= max_num:
-                color_list = (init_num , 255 , 255)
-                screen.fill(color_list)
-                print(color_list)
-                init_num += 1
-            else:
-                init_num = 0
-        print("while True循环")
-        pygame.display.flip()
+            pygame.display.flip()
 run_game()
-
 # 鼠标移动之后修改背景颜色
