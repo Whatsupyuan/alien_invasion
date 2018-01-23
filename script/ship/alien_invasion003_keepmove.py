@@ -12,6 +12,7 @@ def run_game():
     # 创建飞船
     ship = Ship(screen)
     while True:
+        # 点击按键之后不动使飞机能够一直移动
         gf.check_events_keepMove(ship)
         ship.update()
         gf.update_screen(setting , screen , ship)
