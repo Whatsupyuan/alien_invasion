@@ -29,7 +29,7 @@ def check_events_keepMove(ship):
                 ship.move_right = True
             elif even.key == pygame.K_LEFT:
                 ship.move_left = True
-        # 左右移动时 , 抬起按键
+        # 左右移动时抬起按键
         elif even.type == pygame.KEYUP:
             if even.key == pygame.K_RIGHT:
                 ship.move_right = False

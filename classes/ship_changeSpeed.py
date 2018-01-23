@@ -1,7 +1,11 @@
 import pygame
 
+'''
+添加可以变速移动飞船的属性
+setting类通过参数传递过来时,不需要告知setting类位置,只当对象传递,传递之后直接使用
+'''
 class Ship():
-    def __init__(self , screen):
+    def __init__(self , screen , setting):
         self.screen = screen
 
         # 加载 ship 图像，并获取其外接矩形
@@ -17,13 +21,18 @@ class Ship():
         self.move_right = False
         self.move_left = False
 
+        # 飞船的位置
+        self.center = float(self.rect.centerx)
+        self.global_setting = setting
+
     def biltme(self):
         # 在指定位置绘制ship
         self.screen.blit(self.image , self.rect)
 
-    # 移动飞船
     def update(self):
-        if self.move_right:
-            self.rect.centerx += 1
-        if self.move_left:
-            self.rect.centerx -= 1
+        if self.move_right and self.rect.right < self.screen_rect.right :
+            self.center += self.global_setting.ship_speed_factor
+        if self.move_left and self.rect.left>0:
+            self.center -= self.global_setting.ship_speed_factor
+
+        self.rect.centerx = self.center
