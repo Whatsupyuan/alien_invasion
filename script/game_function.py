@@ -25,16 +25,24 @@ def check_events_keepMove(ship):
             sys.exit()
         # 左右移动 , 按下按键
         elif even.type == pygame.KEYDOWN:
-            if even.key == pygame.K_RIGHT:
-                ship.move_right = True
-            elif even.key == pygame.K_LEFT:
-                ship.move_left = True
+            check_key_down(ship,even)
         # 左右移动时抬起按键
         elif even.type == pygame.KEYUP:
-            if even.key == pygame.K_RIGHT:
-                ship.move_right = False
-            if even.key == pygame.K_LEFT:
-                ship.move_left = False
+            check_key_up(ship,even)
+
+# key按键按下
+def check_key_down(ship , even):
+    if even.key == pygame.K_RIGHT:
+        ship.move_right = True
+    elif even.key == pygame.K_LEFT:
+        ship.move_left = True
+
+# key按键抬起
+def check_key_up(ship , even):
+    if even.key == pygame.K_RIGHT:
+        ship.move_right = False
+    if even.key == pygame.K_LEFT:
+        ship.move_left = False
 
 
 def update_screen(ai_setting , screen , ship):

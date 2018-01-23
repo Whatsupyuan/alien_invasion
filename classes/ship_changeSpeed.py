@@ -32,7 +32,7 @@ class Ship():
     def update(self):
         if self.move_right and self.rect.right < self.screen_rect.right :
             self.center += self.global_setting.ship_speed_factor
-        if self.move_left and self.rect.left>0:
+        if self.move_left and self.rect.left > 0:
             self.center -= self.global_setting.ship_speed_factor
 
         self.rect.centerx = self.center
