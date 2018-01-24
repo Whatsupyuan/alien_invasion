@@ -26,22 +26,22 @@ class Rock():
 
     # 向右
     def move_right(self):
-        if self.move_right_flag:
+        if self.move_right_flag and self.rect.right < self.screen_rect.right :
             self.rect.centerx += self.rock_move_speed
 
     # 向左
     def move_left(self):
-        if self.move_left_flag:
+        if self.move_left_flag and self.rect.left > 0 :
             self.rect.centerx -= self.rock_move_speed
 
     # 向上
     def move_up(self):
-        if self.move_up_flag:
+        if self.move_up_flag and self.rect.top > 0 :
             self.rect.centery -= self.rock_move_speed
 
     # 向下
     def move_down(self):
-        if self.move_down_flag:
+        if self.move_down_flag and self.rect.bottom < self.screen_rect.bottom:
             self.rect.centery += self.rock_move_speed
 
 
