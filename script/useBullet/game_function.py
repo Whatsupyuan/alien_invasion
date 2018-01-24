@@ -38,10 +38,7 @@ def check_key_down(ship , setting , even , bullets , screen):
     elif even.key == pygame.K_LEFT:
         ship.move_left = True
     elif even.key == pygame.K_SPACE:
-        # 加入子弹的限制,获取子弹额数量
-        if len(bullets) < setting.bullets_allowed:
-            new_bullet = Bullet(setting , screen , ship)
-            bullets.add(new_bullet)
+        shootingBullet(bullets , setting , screen , ship)
     # q 键退出Game
     elif even.key == pygame.K_q:
         sys.exit()
@@ -64,3 +61,18 @@ def update_screen(ai_setting , screen , ship , bullets):
     # 让最近的绘制屏幕可见
     pygame.display.flip()
 
+# shooting
+def shootingBullet(bullets , setting , screen , ship):
+    # 加入子弹的限制,获取子弹额数量
+    if len(bullets) < setting.bullets_allowed:
+        new_bullet = Bullet(setting, screen, ship)
+        bullets.add(new_bullet)
+
+# 更新子弹位置
+def update_bullet(bullets):
+    # 更新bullet位置
+    bullets.update()
+    # 删除已经跑出屏幕顶部字段,降低程序运行消耗
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
