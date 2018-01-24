@@ -12,7 +12,6 @@ def run_game():
     pygame.display.set_caption("Alien Invasion")
     # 创建飞船
     ship = Ship(screen , setting)
-
     # 存储子弹的编组
     bullets = Group()
 

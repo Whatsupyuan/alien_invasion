@@ -38,8 +38,13 @@ def check_key_down(ship , setting , even , bullets , screen):
     elif even.key == pygame.K_LEFT:
         ship.move_left = True
     elif even.key == pygame.K_SPACE:
-        new_bullet = Bullet(setting , screen , ship)
-        bullets.add(new_bullet)
+        # 加入子弹的限制,获取子弹额数量
+        if len(bullets) < setting.bullets_allowed:
+            new_bullet = Bullet(setting , screen , ship)
+            bullets.add(new_bullet)
+    # q 键退出Game
+    elif even.key == pygame.K_q:
+        sys.exit()
 
 # key按键抬起
 def check_key_up(ship , even):

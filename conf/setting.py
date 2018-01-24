@@ -14,3 +14,5 @@ class Setting():
 
         self.bullet_height = 15
         self.bullet_color = 60,60,60
+        # 允许的bullet数量,game中最多可以使用的子弹
+        self.bullets_allowed = 3
