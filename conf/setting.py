@@ -6,3 +6,11 @@ class Setting():
         self.backgroudColor = (230,230,230)
         # 飞船的移动速度，越大越快
         self.ship_speed_factor = 1
+
+        # bullet
+        self.bullet_width = 3
+        # 子弹移动速度
+        self.bullet_speed_factor = 1
+
+        self.bullet_height = 15
+        self.bullet_color = 60,60,60

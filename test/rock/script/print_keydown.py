@@ -12,6 +12,7 @@ def run_function():
             if event.type == pygame.QUIT:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
+                # 打印按键编码
                 print(event.key)
         pygame.display.flip()
 
