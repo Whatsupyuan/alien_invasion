@@ -13,7 +13,6 @@ def run_function():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 print(event.key)
-
         pygame.display.flip()
 
 run_function()
