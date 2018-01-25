@@ -17,3 +17,15 @@ class Alien(Sprite):
 
     def blitme(self):
         self.screen.blit(self.image , self.rect)
+
+    def update(self):
+        # 向右移动外星人
+        self.x += (self.setting.alien_speed_factor * self.setting.fleet_direction )
+        self.rect.x = self.x
+
+    def check_dege(self):
+        screen_rect = self.screen.get_rect()
+        if(self.rect.right >= screen_rect.right):
+            return True
+        elif self.rect.left <= 0:
+            return True

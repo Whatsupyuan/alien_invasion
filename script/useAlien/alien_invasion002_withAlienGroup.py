@@ -23,8 +23,8 @@ def run_game():
         gf.check_events_keepMove(ship,setting,bullets,screen)
         ship.update()
         # bullet位置变动
-        gf.update_bullet(bullets)
-        # 打印当前在 Group - Bullets 中的有效弹药
+        gf.update_bullet(bullets , aliens)
+        gf.update_alien(aliens , setting)
         # print(len(bullets))
         gf.update_screen(setting , screen , ship , bullets , aliens)
 
