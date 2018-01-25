@@ -39,7 +39,7 @@ def check_key_down(ship , setting , even , bullets , screen):
         ship.move_left = True
     elif even.key == pygame.K_SPACE:
         shootingBullet(bullets , setting , screen , ship)
-    # q 键退出Game
+    # 按键 q 退出Game
     elif even.key == pygame.K_q:
         sys.exit()
 
@@ -72,7 +72,7 @@ def shootingBullet(bullets , setting , screen , ship):
 def update_bullet(bullets):
     # 更新bullet位置
     bullets.update()
-    # 删除已经跑出屏幕顶部字段,降低程序运行消耗
+    # 删除已经跑出屏幕顶部bullet,降低程序运行消耗
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
